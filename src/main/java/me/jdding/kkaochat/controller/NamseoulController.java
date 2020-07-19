@@ -123,7 +123,7 @@ public class NamseoulController {
 
 
             text.put("text", sb.toString());
-            simpletext.put("simpletext", text);
+            simpletext.put("simpleText", text);
             outputs.add(simpletext);
             template.put("outputs", outputs);
             resultJson.put("version","2.0");
