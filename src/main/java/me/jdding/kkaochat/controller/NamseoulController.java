@@ -2,14 +2,14 @@ package me.jdding.kkaochat.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import me.jdding.kkaochat.application.of.classes.*;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 @RestController
 public class NamseoulController {
@@ -20,14 +20,13 @@ public class NamseoulController {
     @RequestMapping(value = "/kkao/api/v1",
             method = {RequestMethod.GET, RequestMethod.POST},
             produces = "application/json")
-    public JSONObject callAPI(@RequestBody HashMap<String, Object> obj ){
+    public HashMap<String, Object> callAPI(@RequestBody HashMap<String, Object> obj ){
 
-        JSONArray array = new JSONArray();
-        JSONObject resultJson = new JSONObject();
-        JSONObject template = new JSONObject();
-        JSONObject outputs = new JSONObject();
-        JSONObject simpletext = new JSONObject();
-        JSONObject text = new JSONObject();
+        List<HashMap<String, Object>> outputs = new ArrayList<>();
+        HashMap<String, Object> resultJson = new HashMap<>();
+        HashMap<String, Object> template = new HashMap<>();
+        HashMap<String, Object> simpletext = new HashMap<>();
+        HashMap<String, Object> text = new HashMap<>();
 
         StringBuilder sb = new StringBuilder();
 
@@ -35,7 +34,7 @@ public class NamseoulController {
             String s = mapper.writeValueAsString(obj);
             System.out.println(s);
 
-            JSONObject userRequest = (JSONObject)obj.get("userRequest");
+            HashMap<String, Object> userRequest = (HashMap<String, Object>) obj.get("userRequest");
             String utterance = userRequest.get("utterance").toString().replaceAll("\n", "");
 
             if(utterance.contains("종뚱")){
@@ -125,9 +124,8 @@ public class NamseoulController {
 
             text.put("text", sb.toString());
             simpletext.put("simpletext", text);
-            array.add(simpletext);
-            outputs.put("outputs", array);
-            template.put("template", outputs);
+            outputs.add(simpletext);
+            template.put("outputs", outputs);
             resultJson.put("version","2.0");
             resultJson.put("template", template);
 
