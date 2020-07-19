@@ -57,23 +57,23 @@ public class NamseoulController {
                     sb.append("4학년 수강신청\n"
                             + fourthGrade.getYear()+"년 "+ fourthGrade.getMonth()+"월 "+
                             fourthGrade.getDayOfMonth()+"일 입니다.\n" +
-                            "현재 "+ fourthGrade.getNumberOfDays()+"일 남았습니다.\n\n"
+                            "* 현재 "+ fourthGrade.getNumberOfDays()+"일 남았습니다.\n\n"
                             + "3학년 수강신청\n"
                             + thirdGrade.getYear()+"년 "+ thirdGrade.getMonth()+"월 " +
                             thirdGrade.getDayOfMonth()+"일 입니다.\n" +
-                            "현재 "+ thirdGrade.getNumberOfDays()+"일 남았습니다.\n\n"
+                            "* 현재 "+ thirdGrade.getNumberOfDays()+"일 남았습니다.\n\n"
                             + "2학년 수강신청\n"
                             + secondGrade.getYear()+"년 "+ secondGrade.getMonth()+"월 "+
                             secondGrade.getDayOfMonth()+"일 입니다.\n" +
-                            "현재 "+ secondGrade.getNumberOfDays()+"일 남았습니다.\n\n"
+                            "* 현재 "+ secondGrade.getNumberOfDays()+"일 남았습니다.\n\n"
                             + "1학년 수강신청\n"
                             + firstGrade.getYear()+"년 "+ firstGrade.getMonth()+"월 "+
                             firstGrade.getDayOfMonth()+"일 입니다.\n" +
-                            "현재 "+ firstGrade.getNumberOfDays()+"일 남았습니다.\n\n"
+                            "* 현재 "+ firstGrade.getNumberOfDays()+"일 남았습니다.\n\n"
                             + "전체 학년/타과 수강신청"
                             + wholeGrade.getYear()+"년 "+ wholeGrade.getMonth()+"월 "+
                             wholeGrade.getDayOfMonth()+"일 입니다.\n" +
-                            "현재 "+ wholeGrade.getNumberOfDays()+"일 남았습니다.");
+                            "* 현재 "+ wholeGrade.getNumberOfDays()+"일 남았습니다.");
                    break;
                 case "/등록금":
                     LocalDate now = LocalDate.now();
@@ -82,7 +82,7 @@ public class NamseoulController {
                     sb.append("등록금 납부는 "+ dateRegistration.getYear()+"년 "
                             + dateRegistration.getMonth()+"월 "
                             + dateRegistration.getDayOfMonth()+"일 입니다.\n"
-                            +"현재 "+ between+"일 남았습니다.");
+                            +"* 현재 "+ between+"일 남았습니다.");
                     break;
                 case "/휴학접수":
                     LocalDate now1 = LocalDate.now();
@@ -98,7 +98,7 @@ public class NamseoulController {
                     long between2 = ChronoUnit.DAYS.between(now2, star_of_class);
                     sb.append("2학기 개강일은 " + star_of_class.getYear()+"년 "+star_of_class.getMonth()+"월"
                             + star_of_class.getDayOfMonth()+"일 입니다.\n"
-                            +"현재 "+ between2+"일 남았습니다.");
+                            +"* 현재 "+ between2+"일 남았습니다.");
                     break;
                 case "/수강신청 변경":
                     LocalDate now3 = LocalDate.now();
@@ -106,7 +106,7 @@ public class NamseoulController {
                     long between3 = ChronoUnit.DAYS.between(now3, update_of_subject);
                     sb.append("수강신청 변경일은 " + update_of_subject.getYear()+"년 "+update_of_subject.getMonth()+"월"
                             + update_of_subject.getDayOfMonth()+"일 입니다.\n"
-                            +"현재 "+ between3+"일 남았습니다.");
+                            +"* 현재 "+ between3+"일 남았습니다.");
                     break;
                 case "/수강신청 철회":
                     LocalDate now4 = LocalDate.now();
@@ -114,7 +114,7 @@ public class NamseoulController {
                     long between4 = ChronoUnit.DAYS.between(now4, withdraw_of_subject);
                     sb.append("수강신청 철회는 " + withdraw_of_subject.getYear()+"년 "+withdraw_of_subject.getMonth()+"월"
                             + withdraw_of_subject.getDayOfMonth()+"일 입니다.\n"
-                            +"현재 "+ between4+"일 남았습니다.");
+                            +"* 현재 "+ between4+"일 남았습니다.");
                     break;
             }
 
