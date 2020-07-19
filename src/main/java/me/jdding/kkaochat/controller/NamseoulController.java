@@ -1,25 +1,27 @@
 package me.jdding.kkaochat.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import me.jdding.kkaochat.application.of.classes.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.HashMap;
 
 @RestController
 public class NamseoulController {
 
+    @Autowired
+    ObjectMapper mapper;
+
     @RequestMapping(value = "/kkao/api/v1",
             method = {RequestMethod.GET, RequestMethod.POST},
             produces = "application/json")
-    public JSONObject callAPI(@RequestBody JSONObject obj ){
+    public JSONObject callAPI(@RequestBody HashMap<String, Object> obj ){
 
-        String s = obj.toJSONString();
-        System.out.println(s);
         JSONArray array = new JSONArray();
         JSONObject resultJson = new JSONObject();
         JSONObject template = new JSONObject();
@@ -30,6 +32,9 @@ public class NamseoulController {
         StringBuilder sb = new StringBuilder();
 
         try{
+            String s = mapper.writeValueAsString(obj);
+            System.out.println(s);
+
             JSONObject userRequest = (JSONObject)obj.get("userRequest");
             String utterance = userRequest.get("utterance").toString().replaceAll("\n", "");
 
