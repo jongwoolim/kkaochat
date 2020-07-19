@@ -57,19 +57,19 @@ public class NamseoulController {
                     sb.append("4학년 수강신청\n"
                             + fourthGrade.getYear()+"년 "+ fourthGrade.getMonth()+"월 "+
                             fourthGrade.getDayOfMonth()+"일 입니다.\n" +
-                            "현재 "+ fourthGrade.getNumberOfDays()+"일 남았습니다.\n"
+                            "현재 "+ fourthGrade.getNumberOfDays()+"일 남았습니다.\n\n"
                             + "3학년 수강신청\n"
                             + thirdGrade.getYear()+"년 "+ thirdGrade.getMonth()+"월 " +
                             thirdGrade.getDayOfMonth()+"일 입니다.\n" +
-                            "현재 "+ thirdGrade.getNumberOfDays()+"일 남았습니다.\n"
+                            "현재 "+ thirdGrade.getNumberOfDays()+"일 남았습니다.\n\n"
                             + "2학년 수강신청\n"
                             + secondGrade.getYear()+"년 "+ secondGrade.getMonth()+"월 "+
                             secondGrade.getDayOfMonth()+"일 입니다.\n" +
-                            "현재 "+ secondGrade.getNumberOfDays()+"일 남았습니다.\n"
+                            "현재 "+ secondGrade.getNumberOfDays()+"일 남았습니다.\n\n"
                             + "1학년 수강신청\n"
                             + firstGrade.getYear()+"년 "+ firstGrade.getMonth()+"월 "+
                             firstGrade.getDayOfMonth()+"일 입니다.\n" +
-                            "현재 "+ firstGrade.getNumberOfDays()+"일 남았습니다.\n"
+                            "현재 "+ firstGrade.getNumberOfDays()+"일 남았습니다.\n\n"
                             + "전체 학년/타과 수강신청"
                             + wholeGrade.getYear()+"년 "+ wholeGrade.getMonth()+"월 "+
                             wholeGrade.getDayOfMonth()+"일 입니다.\n" +
