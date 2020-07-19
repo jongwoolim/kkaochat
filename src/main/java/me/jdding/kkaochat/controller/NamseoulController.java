@@ -116,9 +116,6 @@ public class NamseoulController {
                             + withdraw_of_subject.getDayOfMonth()+"일 입니다.\n"
                             +"현재 "+ between4+"일 남았습니다.");
                     break;
-                default:
-                    sb.append("무엇을 도와드릴까요?");
-                    break;
             }
 
 
